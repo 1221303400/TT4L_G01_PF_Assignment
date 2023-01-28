@@ -54,10 +54,17 @@ For example:
 ## Problems Encountered & Solutions
 
 P: At the beginning, we did not know what to do at all.
+
 S: We assummed that this assignment is a combination of all lab tutorials. So we studied them and we got where we are right now.
 
+
 P: It was hard to share progress between team members. And we are still confused with GitHub.
+
 S: We decided to use codeshare.io because it is easier.
 
+
 P: system("pause") does not work in VS Code.
+
 S: We learned how to make a mypause() function using cin.clear,sync,get() as an alternative.
+
+
