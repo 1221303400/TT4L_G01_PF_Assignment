@@ -21,6 +21,7 @@ List all the features not yet done. Remove this section if there is no incomplet
 
 1. Mobs spawn and behaviour
 2. Menu Design
+3. Environment spawn and behaviour
 
 
 ## Additional Features
@@ -37,17 +38,20 @@ For example:
 
 ### Mohd Farhan
 
-1. 
-2. *add more*
+1. Game board generation
+2. Alien Spawn and movement
+3. Object check function
+4. Pause function
 
 ### Najjwa Farhanis
 
-1. 
+1. Menu Display function
 2. *add more*
 
 ### Alvy Chang
 
-1. 
+1. Quit Confirmation function
+2. Video Demonstration
 
 
 
