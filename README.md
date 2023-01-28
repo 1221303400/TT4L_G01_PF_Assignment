@@ -31,8 +31,8 @@ Please DO NOT change the Progress Log below. Leave it as it is.
 
 Please replace the following with your group members' names. 
 
-- Tony Stark
-- Steve Rogers
-- Dr. Strange
+- Mohd Farhan
+- Najjwa Farhanis
+- Alvy Chang
 
 
