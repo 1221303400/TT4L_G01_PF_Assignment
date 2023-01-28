@@ -46,7 +46,7 @@ For example:
 ### Najjwa Farhanis
 
 1. Menu Display function
-2. *add more*
+2. User Manual
 
 ### Alvy Chang
 
