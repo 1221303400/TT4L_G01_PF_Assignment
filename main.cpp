@@ -109,7 +109,7 @@ void PlayerInput(Alien &Player, Map &GameMap)
         switch (PlayerInput)
         {
         case 'H':
-            cout << "'H' for Help" << endl
+            cout << "'H' to see the input list" << endl
                  << "'C' to Check Objects" << endl
                  << "'A' to Switch Arrows" << endl
                  << endl
