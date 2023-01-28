@@ -73,9 +73,9 @@ void QuitConfirm()
 void myPause()
 {
     cout << "\nPress ENTER to continue...\n";
-    cin.clear();
-    cin.sync();
-    cin.get();
+    cin.clear(); // clears input
+    cin.sync();  // discard unread characters (0 if none)
+    cin.get();   // wait for input
 }
 
 void displayStartMenu()
@@ -141,17 +141,17 @@ void PlayerInput(Alien &Player, Map &GameMap)
             break;
         case 'V':
             Player.MoveDown(GameMap);
-            //cout << "Feature has not been implemented yet." << endl;
+            // cout << "Feature has not been implemented yet." << endl;
             Answering = false;
             break;
         case '<':
             Player.MoveLeft(GameMap);
-            //cout << "Feature has not been implemented yet." << endl;
+            // cout << "Feature has not been implemented yet." << endl;
             Answering = false;
             break;
         case '>':
             Player.MoveRight(GameMap);
-            //cout << "Feature has not been implemented yet." << endl;
+            // cout << "Feature has not been implemented yet." << endl;
             Answering = false;
             break;
         default:
@@ -325,8 +325,8 @@ void Map::UpdateVector()
         {
             if (board[i][j] == '.')
             {
-            int ObjectNumber = rand() % noOfObjects;
-            board[i][j] = MapObjects[ObjectNumber];
+                int ObjectNumber = rand() % noOfObjects;
+                board[i][j] = MapObjects[ObjectNumber];
             }
         }
     }
