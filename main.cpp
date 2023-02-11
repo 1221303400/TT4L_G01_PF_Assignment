@@ -312,7 +312,7 @@ void StartGame(Alien &Player, Map &GameMap, Zombie &Enemy)
     ShowAlienStats(Player);
     do
     {
-        Player.SheldaCount = 0; // For Shelda
+        Player.SheldaCount = 0;              // For Shelda
         PlayerInput(Player, GameMap, Enemy); // Alien Punya
         GameMap.UpdateVector(Player);
         GameMap.DisplayMap();
@@ -501,7 +501,7 @@ bool Map::IsInsideMap(int x, int y) // Bool Checker
 void Map::SetArrow()
 
 {
-    char Arrow;
+    char Arrow, Ans;
     int x;
     int y;
     std::cout << "Please enter the x coordinate of the arrow" << std::endl;
@@ -517,34 +517,57 @@ void Map::SetArrow()
         switch (Arrow)
         {
         case '^':
-            std::cout << "Switching arrow from '^' to '>'." << std::endl;
-            SetObject(x, y, '>');
+            std::cout << "Arrow is '^'." << std::endl;
             break;
 
         case '>':
-            std::cout << "Switching arrow from '>' to 'v'." << std::endl;
-            SetObject(x, y, 'v');
+            std::cout << "Arrow is '>'." << std::endl;
             break;
 
         case 'v':
-            std::cout << "Switching arrow from 'v' to '<'." << std::endl;
-            SetObject(x, y, '<');
+            std::cout << "Arrow is 'v'." << std::endl;
             break;
 
         case '<':
-            std::cout << "Switching arrow from '<' to '^'." << std::endl;
-            SetObject(x, y, '^');
+            std::cout << "Arrow is '<'." << std::endl;
             break;
 
         default:
             std::cout << "There are no arrows there..." << std::endl;
-            break;
+            return;
         }
     }
     else
     {
         std::cout << "Those coordinates do not exist.\n";
+        return;
     }
+
+    std::cout << "What Arrow would you like to change to?  => ";
+    std::cin >> Ans;
+    switch (Ans)
+    {
+    case '>':
+        SetObject(x, y, '>');
+        break;
+
+    case 'v': case 'V':
+        SetObject(x, y, 'v');
+        break;
+
+    case '<':
+        SetObject(x, y, '<');
+        break;
+
+    case '^':
+        SetObject(x, y, '^');
+        break;
+
+    default:
+        std::cout << "Invalid Input" << std::endl;
+        break;
+    }
+
     myPause();
     DisplayMap();
 }
@@ -1372,7 +1395,7 @@ void Alien::ZombieDamaged(Zombie &Enemy, int Zlabel, int Attack) // Zombie gets 
             Attack = TempAlienAttack * 0.5;
         }
         std::cout << "Shelda's health is currently " << percent << "%, she will deal "
-                  << Dpercent  << "% Damage.\n";
+                  << Dpercent << "% Damage.\n";
     }
 
     Enemy.Z[RealLabel].ZHealth = Enemy.Z[RealLabel].ZHealth - Attack;
@@ -1997,6 +2020,4 @@ int main()
         myPause();
     } while (done);
 }
-
-
 // We're done.
