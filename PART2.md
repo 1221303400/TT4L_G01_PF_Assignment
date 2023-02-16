@@ -36,12 +36,13 @@ For example:
 1. Game board generation
 2. Alien Spawn and movement
 3. Zombie Spawn and behaviour
-4. Save and Load
+4. Object Checking
 
 ### Najjwa Farhanis
 
 1. Menu Display function
 2. User Manual
+3. Save and Load
 
 ### Alvy Chang
 
