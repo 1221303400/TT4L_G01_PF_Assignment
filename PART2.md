@@ -1,4 +1,4 @@
-# Part 1
+# Part 2
 
 
 ## Video Demo
@@ -15,7 +15,7 @@ List all the features completed.
 2. Alien movement with input
 3. Ability to check objects on map
 4. Arrows are changeable
-5. Zombies Settings and behaviour
+5. Alien and Zombies behaviour
 6. Save and Load
 
 ## Additional Features
