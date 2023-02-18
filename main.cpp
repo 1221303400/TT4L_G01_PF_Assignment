@@ -110,6 +110,8 @@ bool Confirmation()
     char Ans;
 
     std::cout << "\nAre you sure? 'Y/N'" << std::endl;
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> Ans;
     Ans = toupper(Ans);
     if (Ans == 'Y')
@@ -125,6 +127,8 @@ void QuitConfirm()
     char Ans;
 
     std::cout << "\nAre you sure? 'Y/N' \n Remember to save your progress." << std::endl;
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> Ans;
     Ans = toupper(Ans);
     if (Ans == 'Y')
@@ -156,11 +160,13 @@ void displayStartMenu()
               << std::endl;
     std::cout << "Let's Get Started! Select by typing:" << std::endl;
 
-    std::cout << "1: Start game " << std::endl
-              << "2: Map Settings " << std::endl
-              << "3: Alien Selection " << std::endl
-              << "4: Zombie Settings" << std::endl
-              << "5: Quit game "
+    std::cout << "+---------------------------------+" << std::endl
+              << "|1: Start game                    |" << std::endl
+              << "|2: Map Settings                  |" << std::endl
+              << "|3: Alien Selection               |" << std::endl
+              << "|4: Zombie Settings               |" << std::endl
+              << "|5: Quit game                     |" << std::endl
+              << "+---------------------------------+" << std::endl
               << std::endl;
 
     std::cout << "Input => " << std::endl;
@@ -181,6 +187,8 @@ void ShowZombieStats(Zombie &Enemy) // Show Zombie Stats
     int i, ans;
     char ch;
     std::cout << "Enter the number of the Zombie => ";
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> ans;
     i = ans - 1;
 
@@ -224,12 +232,14 @@ void PlayerInput(Alien &Player, Map &GameMap, Zombie &Enemy)
     {
         std::cout << std::endl
                   << "Your input? Type 'H' to see the list of inputs." << std::endl;
+        std::cin.clear();
+        std::cin.sync();
         std::cin >> PlayerInput;
         PlayerInput = toupper(PlayerInput);
         switch (PlayerInput)
         {
         case 'H':
-            std::cout << "'H' to see the input list\n"
+            std::cout << "\n'H' to see the input list\n"
                       << std::endl
                       << "'D' to Display the Map and your Stats" << std::endl
                       << "'C' to Check Objects" << std::endl
@@ -348,8 +358,12 @@ void Map::CheckObject()
 
     std::cout << "Enter coordinates of object you want to check." << std::endl;
     std::cout << "X-Coordinate: " << std::endl;
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> x;
     std::cout << "Y-Coordinate: " << std::endl;
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> y;
 
     DisplayMap();
@@ -481,7 +495,8 @@ void Map::DisplayMap()
             std::cout << " " << (j % 10);
         }
     }
-    std::cout << std::endl;
+    std::cout << std::endl
+              << std::endl;
 }
 
 char Map::getObject(int x, int y) const // get char on Map
@@ -505,9 +520,13 @@ void Map::SetArrow()
     int x;
     int y;
     std::cout << "Please enter the x coordinate of the arrow" << std::endl;
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> x;
 
     std::cout << "Please enter the y coordinate of the arrow" << std::endl;
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> y;
 
     if (IsInsideMap(x, y) == true)
@@ -544,6 +563,8 @@ void Map::SetArrow()
     }
 
     std::cout << "What Arrow would you like to change to?  => ";
+    std::cin.clear();
+    std::cin.sync();
     std::cin >> Ans;
     switch (Ans)
     {
@@ -551,7 +572,8 @@ void Map::SetArrow()
         SetObject(x, y, '>');
         break;
 
-    case 'v': case 'V':
+    case 'v':
+    case 'V':
         SetObject(x, y, 'v');
         break;
 
@@ -586,8 +608,12 @@ int Map::SetDimensions() // Map Settings
     do
     {
         std::cout << "X-Dimension = " << std::endl;
+        std::cin.clear();
+        std::cin.sync();
         std::cin >> AnsX;
         std::cout << "Y-Dimension = " << std::endl;
+        std::cin.clear();
+        std::cin.sync();
         std::cin >> AnsY;
         if (AnsX > 3 && AnsY > 3)
         {
@@ -719,6 +745,8 @@ Alien ChooseAlien()
 
         std::cin.clear();
         std::cin.sync();
+        std::cin.clear();
+        std::cin.sync();
         std::cin >> ans;
         switch (ans)
         {
@@ -783,8 +811,6 @@ void Alien::Interact(Map &GameMap, char Environment)
         std::cout << std::endl
                   << AlienName << " has consumed an Arrow.\n";
         break;
-    /* case 'p': // pod attack Tak Payah
-        break; */
     case 'h': // health
         if (AlienHealth + 40 >= MaxAlienHealth)
         {
@@ -926,19 +952,15 @@ void Alien::Move(Map &GameMap, Zombie &Enemy, char Direction)
     {
     case '^':
         ObjDX = posX, ObjDY = posY + 1;
-        // ObjBX = posX, ObjBY = posY - 1;
         break;
     case 'v':
         ObjDX = posX, ObjDY = posY - 1;
-        // ObjBX = posX, ObjBY = posY + 1;
         break;
     case '<':
         ObjDX = posX - 1, ObjDY = posY;
-        // ObjBX = posX + 1, ObjBY = posY;
         break;
     case '>':
         ObjDX = posX + 1, ObjDY = posY;
-        // ObjBX = posX - 1, ObjBY = posY;
     default:
         break;
     }
@@ -1156,7 +1178,6 @@ void Alien::MoveOneStep(Map &GameMap, char direction)
             GameMap.DisplayMap();
 
             std::cout << AlienName << " is moving North." << std::endl;
-            // myPause();
             break;
         }
     }
@@ -1170,7 +1191,6 @@ void Alien::MoveOneStep(Map &GameMap, char direction)
             GameMap.DisplayMap();
 
             std::cout << AlienName << " is moving South." << std::endl;
-            // myPause();
             break;
         }
     }
@@ -1184,7 +1204,6 @@ void Alien::MoveOneStep(Map &GameMap, char direction)
             GameMap.DisplayMap();
 
             std::cout << AlienName << " is moving West." << std::endl;
-            // myPause();
             break;
         }
     }
@@ -1198,7 +1217,6 @@ void Alien::MoveOneStep(Map &GameMap, char direction)
             GameMap.DisplayMap();
 
             std::cout << AlienName << " is moving East." << std::endl;
-            // myPause();
             break;
         }
 
@@ -1705,6 +1723,8 @@ int Zombie::NoOfZombies() // Zombie Settings
 
     do
     {
+        std::cin.clear();
+        std::cin.sync();
         std::cin >> AnsZ;
 
         if (AnsZ >= 1 && AnsZ <= 9)
@@ -1858,8 +1878,6 @@ void Save(Map &GameMap, Alien &Player, Zombie &Enemy)
     // Save Alien
 
     SaveFile << Player.AlienName << "\n";
-    //  << Player.AlienBio << "\n"
-    //  << Player.AlienSpec << "\n";
 
     // Save Zombies
     for (int z = 0; z < Enemy.ZombieAmount; z++)
@@ -1928,17 +1946,10 @@ void Load(Map &GameMap, Alien &Player, Zombie &Enemy)
 
     // Load Alien
     Player.AlienName.clear();
-    // Player.AlienBio.clear();
-    // Player.AlienSpec.clear();
+
     LoadFile.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     std::getline(LoadFile, Player.AlienName);
-    // std::getline(LoadFile, Player.AlienSpec, '\0');
-    // std::getline(LoadFile, Player.AlienBio);
-    /*     LoadFile.clear();
-        LoadFile.sync(); */
-
-    // Load Zombies
 
     for (int z = 0; z < Enemy.ZombieAmount; z++)
     {
@@ -1951,25 +1962,6 @@ void Load(Map &GameMap, Alien &Player, Zombie &Enemy)
     LoadFile.close();
     std::cout << "Save file " << LoadName << " has been loaded." << std::endl;
 }
-
-/* void test()
-{
-    // srand(3);
-
-    std::ofstream Savefile;
-    std::ifstream LoadFile;
-    Map map;
-    Alien alien;
-    Zombie zombie;
-    char Input;
-
-    map.DimX = 5, map.DimY = 5;
-    zombie.ZombieAmount = 1;
-    zombie.ZombieStillAlive = 1;
-    alien = CreateAlien(1); // default values
-
-    StartGame(alien, map, zombie);
-} */
 
 int main()
 {
@@ -1993,6 +1985,8 @@ int main()
     {
         displayStartMenu();
 
+        std::cin.clear();
+        std::cin.sync();
         std::cin >> Input;
         switch (Input)
         {
@@ -2020,4 +2014,10 @@ int main()
         myPause();
     } while (done);
 }
+
+
+
+
+
+
 // We're done.
