@@ -12,7 +12,7 @@ The YouTube link to our [Video Demo](https://www.youtube.com/watch?v=qx9FZV_0UcY
 3) Enter the following command to compile the source file using g++:
     " g++ -o 'name-you-want-to-give' main.cpp "
     We recommend No spaces in the name of the compiled programme.
-4) Enter ".\'name-of-compiled-programme' in the terminal and the game should start.
+4) Enter ".\name-of-compiled-programme in the terminal and the game should start.
 
 
 ## User Manual
