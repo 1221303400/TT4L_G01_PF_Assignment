@@ -2,7 +2,7 @@
 
 Alien vs. Zombie is C++ text-based game where you control an alien that needs to fight off zombies invading their homeplanet.
 
-The YouTube link to our [Video Demo](https://www.youtube.com/watch?v=qx9FZV_0UcY).
+The YouTube link to our [Video Demo](https://www.youtube.com/watch?v=5kPEgZmcOxM).
 
 ## Compilation Instructions
 
