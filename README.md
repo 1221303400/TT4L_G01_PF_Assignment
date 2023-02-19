@@ -34,9 +34,9 @@ The YouTube link to our [Video Demo](https://www.youtube.com/watch?v=qx9FZV_0UcY
     - NOTE: The default settings are 5x9 Map Board, 3 Zombies, & Alvee the Alien. 
 7) Once user press '1', there will be the game map. You may press 'H' to view the lists of inputs.
 8) To move the alien press:     
-    '^' to move up
-    'v' to move down
-    '<' to move left 
+    '^' to move up,
+    'v' to move down,
+    '<' to move left, 
     '>' to move right.
 9) To switch the arrows press 'A'. 
     - Enter the x-coordinates first
