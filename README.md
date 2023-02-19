@@ -18,11 +18,11 @@ The YouTube link to our [Video Demo](https://www.youtube.com/watch?v=qx9FZV_0UcY
 ## User Manual
 
 1) There are 5 features from the main menu:
-    1 To start the game.
-    2 For map settings.
-    3 For Alien selection
-    4 For zombie setting.
-    5 To quit the game.
+    1- To start the game.
+    2- For map settings.
+    3- For Alien selection
+    4- For zombie setting.
+    5- To quit the game.
 2) PLEASE NOTE: the game will pause to make the progress clearer, pressing ENTER is sufficient to continue.
 3) Press '2' to change map settings of the game.
     - Continue the game by setting your board dimension with odd number so the alien can be placed in the middle.
@@ -31,6 +31,7 @@ The YouTube link to our [Video Demo](https://www.youtube.com/watch?v=qx9FZV_0UcY
 5) Press '4' for Zombie settings.
     - The Zombie setting allows the user to encounter 1 to 9 Zombies.
 6) Press '1' to start the game.
+    - NOTE: The default settings are 5x9 Map Board, 3 Zombies, & Alvee the Alien. 
 7) Once user press '1', there will be the game map. You may press 'H' to view the lists of inputs.
 8) To move the alien press:     
     '^' to move up
